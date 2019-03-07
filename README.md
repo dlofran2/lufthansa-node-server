@@ -1,2 +1,3 @@
-# lufthansa-node-server
-Node proxy API to the Lufthansa Open API
+# Lufthansa Node Server
+
+Node proxy API to the Lufthansa Open API to learn and understand the api before starting work on a React project

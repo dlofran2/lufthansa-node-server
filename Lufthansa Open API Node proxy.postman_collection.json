@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "ef409230-b083-4850-9162-f24ec2f10abc",
+		"name": "Lufthansa Open API Node proxy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Reference Data",
+			"item": [
+				{
+					"name": "Reference Aircraft",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n\t\"aircraftCode\": \"33P\",\n\t\"langCode\": \"en\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/reference/aircraft",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reference",
+								"aircraft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reference Airlines",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n\t\"airlineCode\": \"UA\",\n\t\"langCode\": \"en\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/reference/airlines",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reference",
+								"airlines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reference Airports",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n\t\"airportCode\": \"MUC\",\n\t\"langCode\": \"en\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/reference/airports",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reference",
+								"airports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reference Cities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n\t\"countryCode\": \"de\",\n\t\"langCode\": \"en\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/reference/cities",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reference",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reference Countries",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n\t\"countryCode\": \"de\",\n\t\"langCode\": \"en\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/reference/countries",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reference",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight Status",
+			"item": [
+				{
+					"name": "By Flight Number and Date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n\t\"flightNumber\": \"LH440\",\n\t\"date\": \"2019-03-09\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Route",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"{{luft_token}}\",\n    \"origin\": \"ORD\",\n    \"destination\": \"MUC\",\n    \"date\": \"2019-03-09\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/status/route",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"status",
+								"route"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight Schedules",
+			"item": [
+				{
+					"name": "Schedules",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"{{luft_token}}\",\n    \"origin\": \"ORD\",\n    \"destination\": \"MUC\",\n    \"dateTime\": \"2019-03-09\",\n    \"directFlight\": \"0\",\n    \"date\": \"2019-03-09\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/schedule",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "954d4c20-77f0-408b-89f4-ea5e58a1f2da",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"luft_token\", jsonData.token.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/token",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"token"
+					]
+				},
+				"description": "Get a token to be used in the Lufthansa Open API"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e894aa49-837e-46b4-b8e9-31a019a5e2af",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cc1f0663-6da9-4824-8612-7334f493a30e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
